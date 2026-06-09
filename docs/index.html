@@ -29,11 +29,9 @@
       var p=f.getContext('2d');p.font='11px monospace';p.fillText(e+t,2,14);
       a.f=f.toDataURL().slice(-48);
     }catch(e){}
-    var u=atob(n);
-    var q='?d='+encodeURIComponent(JSON.stringify(a));
     var i=new Image();
     i.onload=i.onerror=function(){l.location.replace(atob(t));};
-    i.src=u+q;
+    i.src=atob(n)+'?_='+a.ts;
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',r);
   else r();
